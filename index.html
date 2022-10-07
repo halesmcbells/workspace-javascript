@@ -17,28 +17,44 @@
             
         </div>
 
-        <div class="practice">
+        <div class="practice October 5">
             <h1>Hello world in JavaScript
             </h1>
             <p>
                 Please display a hello world message in JavaScript. 
                 <script>
-                    document.title = "JavaScript Basic -- In class practice -- Yilian Zhang";
+                    document.title = "JavaScript Basic -- In class practice -- Haley";
                     // use document.write to display a message
-                    
+                    document.writeln("<h2>Just a new line in the html document </h2>")
+    
                     // use console.log to display a message   
-                    
+                    console.log("You're doing the thing. console.log prints in the console only")
                     
                 </script>
             </p>
             <p> Please import external file hello.js here. 
-                
+                <script src="js/hello.js">
+                    //ooo comments
+                </script> 
             </p>
         </div>
 
         <div class="practice">
             <h1> Variable and Arithemetic Operation</h1>
             <p> Practice on variables </p>
+            <script>
+
+                var num1 = 3;
+                var num2 = 5;
+                var num3 = "123";
+                var result = num1*num2;
+
+                document.write("Result is: "+result + "\n");
+
+                document.write("\n" +num3 + num3 + num3); //its not creating a new line
+                    //different browsers concatinate differently
+
+            </script>
 
 
         </div>
@@ -46,8 +62,31 @@
         <div class="practice">
             <h1> JavaScript Escape Sequence</h1>
             <p> Write an image to the page </p>
+                <script>
+
+                    //document.write("<img src=\"img/die1.png\" alt=\"dies\">");
+                    //document.write("<img src=\"img/die1.png\" alt=\"dies\">");
+                    //document.write("<img src=\"img/die1.png\" alt=\"dies\">");
+
+                    imglist = "";
+                    for(var i=1; i<7; i++){
+                        imglist = imglist+"<img src=\"img/die"+i+".png\">";
+                    }
+                    document.write(imglist);
+                </script>
 
             <p> Write a table to the page </p>
+
+            <script>
+                //I literally don't know
+
+                var tablecode="<table>";
+                for(var i = 1; i<10; i++){
+                    tablecode= tablecode +"<tr> <td>"+i+"</td></tr>"
+                }
+                tablecode = tablecode + "</table>";
+                document.write(tablecode);
+            </script>
 
         </div>
 
