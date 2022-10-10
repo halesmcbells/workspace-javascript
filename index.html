@@ -94,14 +94,18 @@
             <h1>Window and document object </h1>
             <p> Try alert, open, location, url </p>
             <script>
+                document.write(window.location.href);
+                //window.open("https://developer.mozilla.org/en-US/docs/Web/API/Document");
 
+               // window.location.assign("https://developer.mozilla.org/en-US/docs/Web/API/Document");//pretty neat
+               // window.alert(); the alert will pop up before the above page loads
             </script>
 
         </div>
 
         <div class="practice">
             <h1> Get textcontent of an element </h1>
-            <p>Perform arithmetic operation on <span id="num1"> 4 </span> and <span id="num2">5 </span> </p>
+            <p>Perform arithmetic operation on <span id="num1"> 225 </span> and <span id="num2">220 </span> </p>
             <p>Result:
                 <script src="js/arith.js"></script>
             </p>
@@ -110,11 +114,20 @@
 
         <div class="practice">
             <h1> Get innerHTML of an elemnt</h1>
-            <p id="p1"> Paragraph Number One </p>
-            <p id="p2"> Paragraph Number two </p>
+            <p id="p1" onclick="changeit();"> Paragraph Number One </p>
+            <p id="p2" > Paragraph Number two </p>
             <p id="p3"> Paragraph Number three </p>
-            <p>Please write JavaScript code to change the content of each paragraph.​
-            <p>
+            <p>Please write JavaScript code to change the content of each paragraph            </p>
+                <script> //pretty cool
+                    //event handler
+                    function changeit(){
+                        
+                       // document.getElementById('p1').textContent="I did it";
+                       // document.getElementById('p2').textContent="Heck."; //got errors when I tried to do onclick= changeit() on p2 and p3
+                       // document.getElementById('p3').textContent="Recognition";// but it still worked
+                    }
+                </script>
+
 
 
         </div>
@@ -124,6 +137,12 @@
             <p> Please enter your numbers </p>
             <script>
                 function calculate() {
+                    var n1 = parseInt(document.getElementsByName('num1')[0].value);
+                    var n2 = parseInt(document.getElementsByName('num2')[0].value);
+                    //debugging
+                    console.log("n1="+n1);
+                    //output
+                    document.getElementById('result').textContent = "The anser is "+ans;
 
 
                 }
@@ -154,6 +173,19 @@
                     </label>
                 </p>
             </form>
+            <script>
+
+                //event handler
+                function welcomeMessage(){
+                    window.alert("Works!!!");
+                }
+
+                //event handler
+                var fE = document.getElementById('cName');
+                fE.addEventListener('blur',welcomeMessage,false);
+                //nothing happened oct 10
+
+            </script>
 
         </div>
 
