@@ -70,7 +70,9 @@
 
                     imglist = "";
                     for(var i=1; i<7; i++){
+
                         imglist = imglist+"<img src=\"img/die"+i+".png\">";
+                        
                     }
                     document.write(imglist);
                 </script>
@@ -122,9 +124,9 @@
                     //event handler
                     function changeit(){
                         
-                       // document.getElementById('p1').textContent="I did it";
-                       // document.getElementById('p2').textContent="Heck."; //got errors when I tried to do onclick= changeit() on p2 and p3
-                       // document.getElementById('p3').textContent="Recognition";// but it still worked
+                        document.getElementById('p1').textContent="I did it";
+                        document.getElementById('p2').textContent="Heck."; //got errors when I tried to do onclick= changeit() on p2 and p3
+                        document.getElementById('p3').textContent="Recognition";// but it still worked
                     }
                 </script>
 
@@ -137,8 +139,15 @@
             <p> Please enter your numbers </p>
             <script>
                 function calculate() {
+                    var n = doucment.getElementById('num1').value;
+
+                    if(Number.isNam(Number.parseFloat(n))){
+                        return 0;
+                    }
+
                     var n1 = parseInt(document.getElementsByName('num1')[0].value);
                     var n2 = parseInt(document.getElementsByName('num2')[0].value);
+                    
                     //debugging
                     console.log("n1="+n1);
                     //output
@@ -154,7 +163,7 @@
 
         </div>
 
-        <div class="practice">
+        <div class="practice October 10 2022 ">
             <h1>JavaScript Events - blur -addEventListener </h1>
             <form>
                 <p>
@@ -176,24 +185,44 @@
             <script>
 
                 //event handler
-                function welcomeMessage(){
-                    window.alert("Works!!!");
+                function welcome(){
+                    var name = document.getElementById('cName').value;
+                    document.getElementById('message').innerHTML="Welcome <b>"+name+"</b>!";
                 }
 
-                //event handler
+
+                //event register
                 var fE = document.getElementById('cName');
-                fE.addEventListener('blur',welcomeMessage,false);
+                fE.addEventListener('blur',welcome,false);
                 //nothing happened oct 10
+                //worked on oct 12
 
             </script>
 
         </div>
 
-        <div class="practice">
+        <div class="practice October 12 2022">
             <h1> Practice - Calculate Square</h1>
             Calculating Square:
             <input type="text" id="num" placeholder="Type in a number"> <sup> 2 </sup> =
-            <label id="result"> ? </label>
+            <label id="result_square"> ? </label>
+
+
+            <script>
+
+                
+
+                function squareb(number){
+                    var number = document.getElementById('num').value;
+                    number = Math.pow(number, 2); 
+                    document.getElementById('result_square').innerHTML="Result is: "+number; 
+                }
+
+                var imp = document.getElementById('num');
+                imp.addEventListener('blur',squareb,false);
+                //success! --oct 12
+
+            </script>
 
         </div>
 
@@ -207,13 +236,25 @@
 
             <input type="button" id="tryit" value="Click and Display"> 
 
-            <div id="message"> 
+            <div id="message1"> 
             </div>
+            <script>
+                //event handler
+                function toHTML(){
 
+                    var codes = document.getElementById('code').value;
+                    document.getElementById('message1').innerHTML = codes;
+                }
+
+                //event
+                var bE = document.getElementById('tryit');
+                bE.addEventListener('click', toHTML, false);
+
+            </script>
 
         </div>
 
-        <div class="practice">
+        <div class="practice October 17th">
             <h1>Decision statement - If </h1>
             Honda Accord Used Car price estimate,
             <p>Please enter the year of the car
@@ -226,6 +267,34 @@
                     <option> Fair</option>
                     <option> Good</option>
                 </select>.</p>
+
+                <script>
+                    //event handler
+                    function getPrice(){
+                        var yearCar = document.getElementById('year').value;
+                        var condCar = document.getElementById('condition').value;
+                        var price = 0;
+
+                        if(yearCar=="2003" && condCar=="Good"){
+                            price = 5000;
+                        }else if(yearCar=="2003" && condCar=="Fair"){
+                            price = 4500;
+                        }
+                        if(yearCar=="2004" && condCar=="Good"){
+                            price = 5500;
+                        }else if(yearCar=="2004" && condCar=="Fair"){
+                            price = 4700;
+                        }
+                        
+
+                        document.getElementById('price').textContent=price.toString();
+                    }
+                    // register
+                    document.getElementById('year').addEventListener('change',getPrice,false);
+                    //another way
+                    document.querySelector('#condition').addEventListener('change',getPrice,false);
+
+                </script>
 
             <p id="price">
 
@@ -245,6 +314,42 @@
                 <input type="text" id="theme">
             </p>
 
+            <script>
+
+                function changetheme(){
+                    let theme = document.querySelector('#theme').value;
+
+                    let bcolor="white";
+
+                    switch (theme) {
+                        case "warm":
+                            bcolor="pink";
+                            
+                            break;
+                        case "cool":
+                            bcolor="blue";
+                            break;
+                        case "bright":
+                            bcolor="yellow" //you can use RGB or other types
+                            break;
+                        case "dark":
+                            bcolor="grey"
+                            break;
+                        default:
+                            bcolor="white";
+                            break;
+                    }
+
+                    //new way
+                  //  document.body.setAttribute('style', "background-color:"+bcolor);
+                    //old way
+                    document.body.style.backgroundColor = bcolor;
+
+                }
+
+                document.querySelector('#theme').addEventListener('blur', changetheme, false);
+
+            </script>
         </div>
 
 
@@ -252,9 +357,9 @@
         <div class="practice">
             <h1> Switch practice -- Insurance Application</h1>
             <p> Choose your coverage
-                <input type="radio" name="coverage" value="100000">100000
-                <input type="radio" name="coverage" value="200000">200000
-                <input type="radio" name="coverage" value="300000">300000
+                <input type="radio" name="coverage" value="100000" >100000
+                <input type="radio" name="coverage" value="200000" >200000
+                <input type="radio" name="coverage" value="300000" >300000
 
             </p>
             <p> Choose your age group.
@@ -273,7 +378,18 @@
             <p id="result">
 
             </p>
+                <script>
+                    function getPremium(){
+                        var rE = doucment.querySelector('input[name="coverage"]:checked');
+                        coverage = parseInt(rE.value);
+                        console.log(coverage);
 
+                    }
+                    var bE=document.querySelector('input[value="Check Premium"]');
+                    bE.addEventListener('click',getPremium,false);
+
+
+                </script>
         </div>
 
 
