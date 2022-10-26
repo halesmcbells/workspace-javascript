@@ -498,8 +498,19 @@
                     var number = Math.floor(Math.random()*6+1);
 
                     stats[number-1]++;
-
                     document.getElementById('dice').setAttribute('src',"img/die",+number+".png");
+                    for(var i in stats){
+                        console.log(stats[i]);
+                    }
+                    //for loop here
+                   
+                    document.getElementById('r1').textContent=stats[0].toString();
+                    document.getElementById('r2').textContent=stats[1].toString();
+                    document.getElementById('r3').textContent=stats[2].toString();
+                    document.getElementById('r4').textContent=stats[3].toString();
+                    document.getElementById('r5').textContent=stats[4].toString();
+                    document.getElementById('r6').textContent=stats[5].toString();
+                    
                 }
                 document.getElementById('roll').addEventListener('click',changeimage,false);
             </script>
@@ -524,7 +535,13 @@
                 <img src="img/usca5.jpg" alt="usca">
             </div>
 			<script>
-				
+				//Automatic Event
+                setInterval(changepic,5000);
+
+                //Event Handling
+                function changepic(){
+                    
+                }
 			</script>
 
 
