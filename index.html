@@ -7,7 +7,48 @@
     <!-- Jquery library   ---->
     <script src="https://code.jquery.com/jquery-3.5.1.js"
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        //October 31st 2022
+        $(document).ready(function(){
 
+            $('body').hide().fadeIn(3000);
+            /*
+            $('h1').mouseover(function(){
+            
+                $(this).slideUp();
+            //window.alert("you click h1");
+            });
+
+            $('body').click(function(){
+                window.alert("stop clicking me");
+            });
+
+            $('h1').mouseout(function(){
+                $(this).slideDown();
+            }); 
+            */
+            $('p').hide();
+
+            $('h1').click(function(){
+                $(this).parent().children('p').slideToggle();
+            });
+
+
+
+            $('input').each(function(){
+                var theID= $(this).attr('id');
+                console.log(theID);
+            });
+
+            
+            $('img').each(function(){
+                var srcName =$(this).attr('src');
+                console.log(srcName);
+            });
+            //Not showing up in console
+        });
+        
+    </script>
 
 </head>
 
@@ -538,18 +579,18 @@
 				//Automatic Event
                // setInterval(changepic,5000);
 
-                var index = 0;
+                //var index = 0;
 
-                var imglist =document.querySelectorAll(".img-container-hide");
-                imglist[0].setAttribute('class', "img-container");
+                //var imglist =document.querySelectorAll(".img-container-hide");
+                //imglist[0].setAttribute('class', "img-container");
 
                 //Event Handling
-                function changepic(){
-                    imglist[index].setAttribute('class',"img-container-hide");
-                    index++
-                    index = index%imglist.length;
-                    imglist[index].setAttribute('class', "img-contaienr");
-                }
+              //  function changepic(){
+                    //imglist[index].setAttribute('class',"img-container-hide");
+                    //index++
+                   // index = index%imglist.length;
+                 //   imglist[index].setAttribute('class', "img-contaienr");
+               // }
 			</script>
 
 
