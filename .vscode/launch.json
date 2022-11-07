@@ -5,18 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Attach to Edge",
-            "port": 9222,
-            "request": "attach",
-            "type": "msedge",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
+            "name": "Open index.html",
+            "file": "c:\\Users\\malle\\OneDrive\\Desktop\\Fall 2022\\workspace-javascript\\index.html"
         }
     ]
 }
