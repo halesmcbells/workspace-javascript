@@ -5,10 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Open index.html",
-            "file": "c:\\Users\\malle\\OneDrive\\Desktop\\Fall 2022\\workspace-javascript\\index.html"
+
         }
     ]
 }
