@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="dropZone"> <!--The dropzone should be where the avatar is, and each dropbox will instead be where
+                            certain items go. dropbox1 should be hats, dropbox2 should be shirts, dropbox 3 should 
+                            be pants, and dropbox 4 should be shoes-->
+        <div
+          id="dropBox1"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <p>Hat</p> 
+        </div>
+        <div
+          id="dropBox2"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <p>Shirt</p>
+        </div>
+        <div
+          id="dropBox3"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <p>Pants</p>
+        </div>
+        <div
+          id="dropBox4"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+        >
+          <p>Shoes</p>
+        </div>
+      </div>
+      <!--The animals div will be the clothes div instead, but I'm not changing it until I get a closer look at the css and js.
+            Now I've got to replace the images with clothes images-->
+      <div
+        id="animals" 
+        ondrop="drop(event)"
+        ondragover="allowDrop(event)" 
+        
+      >
+        <img
+          id="cat"
+          src="C:\Users\malle\OneDrive\Desktop\Fall 2022\hat.jpg"
+          draggable="true"
+          ondragstart="drag(event)"
+          width="300"
+        />
+      
+        <img
+          id="dog"
+          src="C:\Users\malle\OneDrive\Desktop\Fall 2022\hecknope.jpg"
+          draggable="true"
+          ondragstart="drag(event)"
+          width="300"
+        />
+      
+        <img
+          id="mouse"
+          src="https://www.adamspestcontrol.com/cms-files/size-992x992/adams-mouse-600x600.jpg"
+          draggable="true"
+          ondragstart="drag(event)"
+          width="300"
+        />
+      
+        <img
+          id="fish"
+          src="https://cdn.mos.cms.futurecdn.net/uhLVL2jTdtQ7ScXCeoeAU6-650-80.jpg.webp"
+          draggable="true"
+          ondragstart="drag(event)"
+          width="300"
+        />
+        <p>Clothes will go here (for now/I think)</p>
+      </div>   
+</body>
+</html>
